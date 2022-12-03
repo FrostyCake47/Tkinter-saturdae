@@ -5,7 +5,7 @@ import time
 import random
 
 m = tkinter.Tk()
-
+m.title("QuickShot")
 
 ROW = 5
 COLUMN = 5
@@ -75,7 +75,7 @@ def game():
 def main():
     global buttonDetail
     global appearable
-    count = 5
+    count = 30
 
     buttonDetail = random.choice(list(buttonMap.items()))
     appearable = True
