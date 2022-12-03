@@ -11,27 +11,21 @@ column = 5
 red = True
 
 
+
+
+
+'''def makeActive(buttonDetail):
+    buttonDetail[0].config(bg= "red")
+    print(buttonDetail[0])
+    m.after(ms=200 ,func=makeActive(buttonDetail))
+
 def removeActive(buttonDetail):
     buttonDetail[0].config(bg= "white")
-    m.after(ms=200, func=removeActive(buttonDetail))
+    m.after(ms=200, func=removeActive(buttonDetail))'''
 
-'''def makeActive(prevBlock= None):
 
-    buttonDetail = random.choice(list(buttonMap.items()))
 
-    buttonDetail[0].config(bg= "red")
-    prevBlock = buttonDetail
-    prevBlock[0].config(bg = "white")
-    print(buttonDetail[0])
-    m.after(ms=200 ,func=makeActive(prevBlock))'''
 
-def makeActive(prevBlock= None):
-
-    buttonDetail = random.choice(list(buttonMap.items()))
-
-    buttonDetail[0].config(bg= "red")
-    print(buttonDetail[0])
-    m.after(ms=200 ,func=makeActive)
 
 for i in range(row):
     for j in range(column):
@@ -39,7 +33,26 @@ for i in range(row):
         mybutton.grid(row=i, column=j)
         buttonMap[mybutton] = (i, j)
 
-makeActive()
+
+
+
+def makeActive(buttonDetail):
+    buttonDetail[0].config(bg= "red", command=clicked)
+
+def doNothing():
+    pass
+
+def clicked():
+    print("clicked")
+    buttonDetail[0].config(bg= "white", command=doNothing)
+    #buttonDetail = random.choice(list(buttonMap.items()))
+
+
+
+for i in range(4):
+    buttonDetail = random.choice(list(buttonMap.items()))
+    makeActive(buttonDetail)
+    #removeActive(buttonDetail)
 
 m.mainloop()
 
