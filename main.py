@@ -66,7 +66,6 @@ def game():
     global buttonDetail
 
     if appearable:
-        print(buttonDetail[0])
         buttonDetail = random.choice(list(buttonMap.items()))
         buttonDetail[0].config(bg= "red", command=onCLick)
         appearable = False
