@@ -9,8 +9,8 @@ m.title("QuickShot")
 
 ROW = 5
 COLUMN = 5
+BOXWIDTH = 15
 buttonMap = {}
-boxWidth = 15
 score = 0
 
 appearable = True
@@ -28,7 +28,7 @@ gamegrid.pack(side=BOTTOM)
 
 for i in range(ROW):
     for j in range(COLUMN):
-        mybutton= Button(gamegrid, text=" "*boxWidth)
+        mybutton= Button(gamegrid, text=" "*BOXWIDTH)
         mybutton.grid(row=i+1, column=j)
         buttonMap[mybutton] = (i+1, j)
 
